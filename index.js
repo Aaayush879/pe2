@@ -1,6 +1,6 @@
 const port = process.env.PORT||2000;
 const cors = require('cors');
-const URL='mongodb+srv://ayushh:ayushhh@cluster0.yqrvv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const URL="mongodb+srv://ayushh:ayush@cluster0.yqrvv.mongodb.net/?retryWrites=true&w=majority";
 var express = require("express")
 var bodyParser = require("body-parser")
 var mongoose = require("mongoose")
@@ -23,9 +23,11 @@ var db = mongoose.connection;
 db.on('error',()=>console.log("Error in Connecting to Database"));
 db.once('open',()=>console.log("Connected to Database"))
 app.get("/",(req,res)=>{
-    return res.redirect('p1.html');
+    //res.send("hheeloi");
+    return res.redirect('https://chic-kringle-e2f396.netlify.app/');
 })
 app.post("/items",(req,res)=>{
+
     var name = req.body.name;
     var email = req.body.email;
     var password = req.body.password;
